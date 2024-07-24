@@ -8,12 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class ProductsService {
 
-  private baseUrl = 'http://localhost:3000/api';
+  // private baseUrl = 'http://localhost:3000/api';
+  baseUrl : string = 'https://estore-3ey7.onrender.com/api';
 
   constructor(private httpClient:HttpClient) { }
 
   getAllProducts(query?:string):Observable<Product[]>{
-    let url:string = 'http://localhost:3000/api/getAllProducts';
+    let url:string = 'https://estore-3ey7.onrender.com/api/getAllProducts';
     if(query){
       url += '?' + query;
     }
@@ -21,7 +22,7 @@ export class ProductsService {
   }
 
   getProduct(id: number): Observable<Product[]> {
-    const url: string = 'http://localhost:3000/api/getProductById/' + id;
+    const url: string = 'https://estore-3ey7.onrender.com/api/getProductById/' + id;
     return this.httpClient.get<Product[]>(url);
   }
 

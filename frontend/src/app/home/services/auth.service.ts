@@ -10,7 +10,8 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class AuthService {
-  apiUrl:string = 'http://localhost:3000/api'; // Replace with your API URL
+  // apiUrl:string = 'http://localhost:3000/api';
+  apiUrl : string = 'https://estore-3ey7.onrender.com/api';
 
   constructor(private http: HttpClient,
      private componentManagerService: ComponentManagerService,

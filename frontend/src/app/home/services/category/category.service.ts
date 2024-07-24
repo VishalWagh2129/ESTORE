@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class CategoryService {
 
-  private baseUrl = 'http://localhost:3000/api';
+  // private baseUrl = 'http://localhost:3000/api';
+  baseUrl : string = 'https://estore-3ey7.onrender.com/api';
 
   constructor(private http:HttpClient) { }
 

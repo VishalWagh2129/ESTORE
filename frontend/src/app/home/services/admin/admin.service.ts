@@ -9,7 +9,8 @@ import { map } from 'rxjs/operators';
 
 export class AdminService {
 
-    apiUrl: string = 'http://localhost:3000/api';
+    // apiUrl: string = 'http://localhost:3000/api';
+    apiUrl : string = 'https://estore-3ey7.onrender.com/api';
 
     constructor(private http: HttpClient) { }
 
