@@ -1,0 +1,128 @@
+<div class="webdata">
+    <div class="webheader">
+        <div class="container detail-container">
+            <div class="row d-flex">
+                <div class="col-md-12 col-lg-6 col-12" style="background-color: white; padding: 5%;">
+                    <div class="img-zoom-container d-flex justify-content-center align-items-center">
+                        <img [src]="'../../../../assets/images/' + product?.product_img" class="img-fluid" />
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6 col-12"
+                    style="background-color: white;padding: 5% 5% 5% 2%;">
+                    <div class="product-content">
+                        <h2>{{ product?.product_name }}</h2>
+                        <app-rating [score]="product?.ratings"></app-rating>
+                        <div class="product-price">
+                            <span class="price"> {{ product?.price | currency }} </span>
+                        </div>
+                        <div class="my-3 product-description">
+                            {{ product?.product_description }}
+                        </div>
+                        <hr />
+                        <div class="d-flex align-items-center product-availability rounded">
+                            <span style="font-weight: 500;margin-left: 5px;">Availability :</span>
+                            <span class="alb">112 Products Available</span>
+                        </div>
+                        <div class="prdt-size my-3">
+                            <label for="size-select" style="font-weight: 500;">Size:</label>
+                            <select id="size-select" class="form-select">
+                                <option value="" disabled selected>Please select size</option>
+                                <option *ngFor="let size of sizes" [value]="size">{{ size }}</option>
+                            </select>
+                        </div>
+                        <div class="d-flex align-items-center mt-4">
+                            <div class="btn-group mx-2">
+                                <div class="btn btn-outline-dark">
+                                    <span> - </span>
+                                </div>
+                                <div class="btn">1</div>
+                                <div class="btn btn-outline-dark">
+                                    <span> + </span>
+                                </div>
+                            </div>
+                            <!-- <button (click)="addToWishlist()" [ngClass]="{'active': isWishlistActive}"  class="btn cart-wishlist mx-2 rounded" style="border: 1px solid lightgray;">
+                                <fa-icon [icon]="faHeart"></fa-icon>
+                            </button> -->
+                            <button class="btn d-flex align-items-center cart-button rounded-pill px-4"
+                                (click)="addToCart()">
+                                <fa-icon [icon]="faPlus"></fa-icon>
+                                <span style="margin-left: 5px;color: white;"> Add to Cart</span>
+                            </button>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="web-detail">
+        <div class="container review-container">
+            <div class="row">
+                <div class="col-md-12 col-12 col-lg-6" style="padding: 5%;">
+                    <div class="review-div">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="description-tab" data-bs-toggle="tab" href="#description"
+                                    role="tab" aria-controls="description" aria-selected="true">Description</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="review-tab" data-bs-toggle="tab" href="#review" role="tab"
+                                    aria-controls="review" aria-selected="false">Reviews</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="seller-info-tab" data-bs-toggle="tab" href="#seller" role="tab"
+                                    aria-controls="seller" aria-selected="false">Seller Info</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="description" role="tabpanel"
+                                aria-labelledby="description-tab">
+                                <h3>Introduction</h3>
+                                <p>{{ product?.product_description }}</p>
+                            </div>
+                            <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                                <p>Reviews will be shown here.</p>
+                            </div>
+                            <div class="tab-pane fade" id="seller" role="tabpanel" aria-labelledby="seller-tab">
+                                <p>Seller Info will be shown here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- <div class="row my-5 product-details-container">
+    <ng-container *ngIf="product">
+        <div class="col-5 product-image-container">
+            <img [src]="'../../../../assets/images/' + product?.product_img" />
+        </div>
+        <div class="col-7 product-information-container">
+            <span id="product-name"> {{ product?.product_name }} </span>
+            <app-rating [score]="product?.ratings"></app-rating>
+            <hr />
+            <div class="product-price">
+                Price : <span class="price"> {{ product?.price | currency }} </span>
+                <div>Inclusive of all taxes.</div>
+            </div>
+            <div class="my-3 product-description">
+                {{ product?.product_description }}
+            </div>
+            <div class="my-5 btn btn-warning cart-button" (click)="addToCart()">
+                <div class="cart-icon-container">
+                    <fa-icon [icon]="faShoppingCart"></fa-icon>
+                </div>
+                <div class="cart-text-container">
+                    <p>Add to Cart</p>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+</div> -->

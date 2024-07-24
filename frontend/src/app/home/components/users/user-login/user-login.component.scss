@@ -1,0 +1,37 @@
+.form-group-margin {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 40em;
+    margin: 0 auto;
+    padding: 1em;
+    box-sizing: border-box;
+
+    @media (max-width: 767px) {
+        padding: 1em;
+    }
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    padding: 0.5em;
+}
+
+.alert {
+    margin-top: 1em;
+}

@@ -1,0 +1,29 @@
+.full-width {
+    width: 100%;
+}
+
+.card {
+    padding: 20px;
+}
+
+
+.custom {
+    background: white;
+    max-width: 100% !important;
+}
+
+.text-danger {
+    color: red;
+}
+
+h4.back-btn {
+    display: flex;
+    font-size: 14px;
+    color: #3764EB !important;
+    cursor: pointer;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 400;
+    padding: 8px 8px 0px 8px;
+}

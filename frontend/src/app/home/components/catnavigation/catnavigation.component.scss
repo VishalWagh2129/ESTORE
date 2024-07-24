@@ -1,0 +1,137 @@
+@import "../../../../styles.scss";
+
+.navigation-container {
+    max-width: 100%;
+    background-color: rgb(140, 16, 143);
+    border-top: #444444 solid 1px;
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 20px;
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+
+            .collapse-icon {
+                font-size: 1.5em;
+                margin-right: 0.5em;
+                cursor: pointer;
+                color: white;
+
+                &.open {
+                    content: "×"; // Cross icon
+                }
+            }
+
+            .all-categories {
+                text-decoration: none;
+                color: white;
+                font-size: 1em;
+                font-weight: 700;
+                padding: 0.5em 0;
+
+                @media (max-width: 767px) {
+                    display: none;
+                }
+            }
+        }
+
+        .navbar-center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 1em;
+
+            &.show {
+                display: block;
+            }
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+
+                li {
+                    width: 100%;
+                    padding: 0.5em 0;
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        font-size: 1.1em;
+                        font-weight: 700;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        width: 100%;
+                        padding: 0.5em;
+                    }
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, 0.1);
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 768px) {
+            .navbar-center-container {
+                display: flex !important;
+                flex-direction: row !important;
+
+
+                ul {
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+
+                    li {
+                        margin: 0 1em;
+                        padding: 0;
+
+                        a {
+                            width: auto;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 767px) {
+            .navbar-center-container {
+                display: none;
+
+                &.show {
+                    display: flex;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background-color: white;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    z-index: 1000;
+                }
+
+                ul {
+                    li {
+                        a {
+                            color: rgb(140, 16, 143);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

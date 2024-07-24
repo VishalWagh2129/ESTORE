@@ -1,0 +1,81 @@
+.profile-section {
+    padding: 20px;
+}
+
+.profile {
+    color: #455663;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 24px;
+    padding: 0px;
+}
+
+.back-btn {
+    display: flex;
+    font-size: 14px;
+    color: #3764EB;
+    cursor: pointer;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 400;
+}
+
+.edit-icon {
+    margin-left: auto;
+    cursor: pointer;
+    align-items: center;
+    display: grid;
+    margin-bottom: 6px;
+}
+
+.user-name {
+    font-weight: 500;
+    font-size: 22px;
+    color: #455663;
+    margin-top: 20px;
+}
+
+.label-info {
+    font-weight: 400;
+    margin: 2px;
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #455663;
+}
+
+.rectangle-box {
+    padding: 20px;
+}
+
+.label-info {
+    font-weight: 400;
+    margin: 2px;
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: #455663;
+}
+
+.branch {
+    font-family: Montserrat;
+    font-weight: 500;
+    font-size: 20px;
+    padding-bottom: 10px;
+
+}
+
+.all-wrap {
+    background-color: #eee;
+    padding: 20px;
+}
+
+.content {
+    position: relative;
+    display: flex;
+}
+
+.tax-no {
+    color: #455663;
+}

@@ -1,0 +1,54 @@
+/* sidebar.component.css */
+.sidebar {
+    width: 250px;
+    background-color: gray; /* Black background color */
+    color: #fff; /* White text color */
+    border-right: 1px solid #444; /* Slightly lighter border color */
+    height: 100%; /* Full viewport height */
+    position: relative; /* Fix sidebar position */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #444; /* Slightly lighter border color */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+    cursor: pointer;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff; /* White text color */
+    display: flex;
+    align-items: center;
+    font-weight: 500; /* Medium font weight */
+    transition: color 0.3s; /* Smooth transition for color */
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    color: #fff; /* White icon color */
+}
+
+.sidebar ul li a:hover, 
+.sidebar ul li a.active {
+    background-color: #333; /* Dark gray background color on hover */
+    color: #fff; /* Ensure text remains white on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.sidebar ul li:hover {
+    background-color: #333; /* Dark gray background color on hover */
+}
+
+.sidebar ul li a i:hover {
+    color: #007bff; /* Change icon color on hover to a blue highlight */
+}

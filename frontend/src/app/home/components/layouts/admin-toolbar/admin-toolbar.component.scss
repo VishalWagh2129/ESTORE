@@ -1,0 +1,54 @@
+/* navbar.component.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #25893b; /* Match sidebar background color */
+    color: #333; /* Match sidebar font color */
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd; /* Match sidebar border color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+.navbar-brand a {
+    text-decoration: none;
+    color: #eee; /* Match sidebar text color */
+    font-weight: 700; /* Bold font for brand name */
+    font-size: 2.5em; /* Increase font size for brand name */
+}
+
+.navbar-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-menu ul li {
+    margin-left: 20px; /* Space between menu items */
+}
+
+.navbar-menu ul li button {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: 500; /* Medium font weight */
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.navbar-menu ul li button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #fff; /* Ensure text remains white on hover */
+}
+
+/* navbar.component.css */
+.navbar-logo {
+    height: 40px; /* Adjust the height as needed */
+    margin-right: 10px; /* Space between logo and text */
+}
+

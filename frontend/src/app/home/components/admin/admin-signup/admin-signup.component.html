@@ -1,0 +1,42 @@
+<div class="parent">
+    <div class="container">
+        <div class="login-box">
+            <h2>Sign Up</h2>
+            <form [formGroup]="signupForm">
+                <div class="input-box">
+                    <input type="text" placeholder="Enter Username" formControlName="username">
+                    <small class="text-danger mt-2"
+                        *ngIf="!signupForm.controls['username'].valid && signupForm.controls['username'].dirty && signupForm.controls['username'].errors['required']">Username
+                        is required</small>
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Enter Mobile" formControlName="mobile">
+                    <small class="text-danger mt-2"
+                        *ngIf="!signupForm.controls['mobile'].valid && signupForm.controls['mobile'].dirty && signupForm.controls['mobile'].errors['required']">Mobile
+                        is required</small>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Enter Email" formControlName="email">
+                    <small class="text-danger mt-2"
+                        *ngIf="!signupForm.controls['email'].valid && signupForm.controls['email'].dirty && signupForm.controls['email'].errors['required']">Email
+                        is required</small>
+                    <small class="text-danger mt-2"
+                        *ngIf="!signupForm.controls['email'].valid && signupForm.controls['email'].dirty && signupForm.controls['email'].errors['pattern']">Email
+                        is invalid</small>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Enter Password" formControlName="password">
+                    <small class="text-danger mt-2"
+                        *ngIf="!signupForm.controls['password'].valid && signupForm.controls['password'].dirty && signupForm.controls['password'].errors['required']">Password
+                        is required</small>
+                </div>
+                <button type="submit" class="btn" (click)="onSubmit()">Submit</button>
+                <div class="signup-link">
+                    <p>Have an account ? <a href="admin-login">Sign In</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+

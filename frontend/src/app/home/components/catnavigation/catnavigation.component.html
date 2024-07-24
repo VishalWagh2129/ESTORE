@@ -1,0 +1,23 @@
+<div class="navigation-container">
+    <div class="container">
+        <div class="row">
+            <nav class="navbar justify-content-between w-100 ml-auto flex-wrap">
+                <div class="navbar-left">
+                    <span class="collapse-icon" (click)="toggleMenu()">&#9776;</span>
+                    <a class="all-categories" routerLink="/home/categories">All Categories</a>
+                </div>
+                <div class="navbar-center-container" [ngClass]="{'show': menuOpen}">
+                    <ul class="navbar-center">
+                        <li><a routerLink="/home/products">Home</a></li>
+                        <li><a routerLink="/home/products">Shop+</a></li>
+                        <li><a routerLink="/home/products">Pages+</a></li>
+                        <li><a routerLink="/home/products">About</a></li>
+                        <li><a routerLink="/home/products">Blog</a></li>
+                        <li><a routerLink="/home/products">User Dashboard</a></li>
+                        <li><a routerLink="/home/products">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

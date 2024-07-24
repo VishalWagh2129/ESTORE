@@ -1,0 +1,156 @@
+.fc-main-div {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+
+    .order-item-card {
+        img {
+            height: 13em;
+            border-radius: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .order-item-details {
+            text-align: left;
+
+            .fc-main-div {
+                text-align: center;
+                width: 100%;
+                margin: auto;
+
+                .order-item-card {
+                    img {
+                        width: 100%; // Ensure image scales properly
+                        max-width: 308px;
+                        max-height: 313px;
+                        border-radius: 0.5em;
+                        margin-bottom: 1em;
+                    }
+
+                    .order-item-details {
+                        text-align: left;
+
+                        .order-item-name {
+                            font-size: 1.4em;
+                        }
+
+                        .order-item-price {
+                            float: right;
+
+                            span {
+                                font-size: 1.5em;
+                            }
+                        }
+
+                        span {
+                            font-weight: 600;
+                            font-size: large;
+                        }
+                    }
+                }
+
+                .order-summary {
+                    height: fit-content;
+                    border-radius: 2em;
+                    background-color: aliceblue;
+                    text-align: start;
+
+                    span {
+                        display: block;
+                        color: rgb(78, 78, 78);
+                        margin: 1em 0;
+                    }
+
+                    h2 {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    }
+
+                    .summary-total {
+                        color: black;
+                        font-weight: 550;
+                    }
+                }
+
+                @media (max-width: 1024px) {
+                    .fc-main-div {
+                        .order-item-card {
+                            .order-item-details {
+                                text-align: center; // Center text on smaller screens
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .fc-main-div {
+                        .order-item-card {
+                            .order-item-details {
+                                text-align: center;
+                            }
+
+                            img {
+                                max-width: 100%; // Ensure image scales down on smaller screens
+                                max-height: auto;
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 576px) {
+                    .fc-main-div {
+                        .order-item-card {
+                            .order-item-details {
+                                text-align: center;
+                            }
+
+                            img {
+                                max-width: 100%; // Ensure image scales down properly
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .order-item-name {
+                font-size: 1.4em;
+            }
+
+            .order-item-price {
+                float: right;
+
+                span {
+                    font-size: 1.5em;
+                }
+            }
+
+            span {
+                font-weight: 600;
+                font-size: large;
+            }
+        }
+    }
+
+    .order-summary {
+        height: fit-content;
+        border-radius: 2em;
+        background-color: aliceblue;
+        text-align: start;
+
+        span {
+            display: block;
+            color: rgb(78, 78, 78);
+            margin: 1em 0;
+        }
+
+        h2 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .summary-total {
+            color: black;
+            font-weight: 550;
+        }
+    }
+
+}

@@ -1,0 +1,56 @@
+<section class="wishlist-section">
+    <ng-container>
+        <div class="p-4 ec-main-div">
+            <span class="my-5 ec-text"> The Cart Is Empty </span>
+            <hr />
+            <div class="btn btn-warning my-3" (click)="navigateToHome()">
+                <span style="font-weight: 500"> Continue Shopping </span>
+            </div>
+        </div>
+        <div class="alert" [ngClass]="
+            alertType === 0
+              ? 'alert-success'
+              : alertType === 1
+              ? 'alert-warning'
+              : 'alert-danger'
+          " *ngIf="alertMessage !== ''">
+            {{ alertMessage }}
+        </div>
+    </ng-container>
+    <ng-container>
+        <div class="wish-header">
+            <div class="container">
+                <div class="row">
+                    <div class="title align-items-center">
+                        <h1>Wishlist</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wish-items">
+            <div class="container">
+                <div class="row wish-header">
+                    <div class="col">Product</div>
+                    <div class="col">Price</div>
+                    <div class="col">Action</div>
+                </div>
+                <div class="row wish-item">
+                    <div class="col product-col">
+                        <!-- <a routerLink="../product/{{wish.id}}">
+                            <img [src]="'../../../../assets/images/' + wish.product_img" alt="Product Image"
+                                class="product-image" />
+                            <span class="product-name">Pr</span>
+                        </a> -->
+                    </div>
+                    <div class="col">
+                        <span class="product-name"></span>
+                    </div>
+                    <div class="col">
+                        <fa-icon [icon]="faXmark"></fa-icon>
+                    </div>
+                </div>
+                <!-- Repeat .wish-item elements for additional products -->
+            </div>
+        </div>
+    </ng-container>
+</section>

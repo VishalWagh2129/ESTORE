@@ -1,0 +1,48 @@
+<!-- brand-list.component.html -->
+
+<div class="parent">
+    <div class="col-6 add-brand">
+        <a (click)="addProduct()" title="Add Brand" role="button">
+            <span class="add-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M7.99982 0C12.4181 0 15.9996 3.58169 15.9996 8C15.9996 12.4183 12.418 16 7.99982 16C3.58169 16 0 12.4181 0 8C0 3.58187 3.58169 0 7.99982 0ZM10.8434 7.58293H8.41689V5.15644C8.41689 4.60747 7.58276 4.60747 7.58276 5.15644V7.58293H5.15627C4.60711 7.58293 4.60711 8.41707 5.15627 8.41707H7.58276V10.8436C7.58276 11.3925 8.41689 11.3925 8.41689 10.8436V8.41707H10.8434C11.3925 8.41707 11.3925 7.58293 10.8434 7.58293ZM13.0668 2.93298C10.2684 0.134578 5.7312 0.134578 2.9328 2.93298C0.1344 5.73138 0.1344 10.2686 2.9328 13.067C5.7312 15.8654 10.2684 15.8654 13.0668 13.067C15.8652 10.2686 15.8652 5.73138 13.0668 2.93298Z"
+                        fill="#3764EB" />
+                </svg> Add
+            </span>
+        </a>
+    </div>
+    <div class="mat-table">
+        <table mat-table [dataSource]="productsData" class="mat-elevation-z8">
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let brand">{{ brand.product_name }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef>Description</th>
+                <td mat-cell *matCellDef="let brand">{{ brand.DESCRIPTION }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef>Price</th>
+                <td mat-cell *matCellDef="let brand">{{ brand.PRICE }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef>Action</th>
+                <td mat-cell *matCellDef="let brand">
+                    <button mat-icon-button color="primary" (click)="editProduct(brand)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" (click)="deleteProduct(brand)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</div>

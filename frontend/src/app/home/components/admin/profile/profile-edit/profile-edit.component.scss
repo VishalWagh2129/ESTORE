@@ -1,0 +1,93 @@
+.card {
+    padding: 20px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.custom {
+    background: white;
+    max-width: 100% !important;
+}
+
+.text-danger {
+    color: red;
+}
+
+h4.back-btn {
+    display: flex;
+    font-size: 14px;
+    color: #3764EB !important;
+    cursor: pointer;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 400;
+    padding: 8px 8px 0px 8px;
+}
+
+.radio-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-buttons mat-radio-button {
+    margin: 5px 0;
+}
+
+.mat-label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Style the label */
+.upload-label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Style the file input to hide its default appearance */
+.image-upload {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+/* Optionally, style the upload button */
+.upload-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.uploaded-image {
+    max-width: 100%;
+    /* Set maximum width */
+    max-height: 200px;
+    /* Set maximum height */
+    display: block;
+    /* Ensure the image is displayed as a block element */
+    margin-top: 5px;
+    /* Add some margin for spacing */
+}

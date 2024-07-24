@@ -1,0 +1,35 @@
+
+@mixin underline-transition($width){
+    &::after{
+        content:'';
+        display:block;
+        bottom: 0;
+        left: 0;
+        height:0.2em;
+        background-color: red;
+        transform: scale(0);
+        transition-property: transform;
+        transition-duration: 0.2s;
+    }
+
+    &:hover{
+        &::after{
+            transform: scale($width);
+        }
+    }
+}
+
+h1{
+    font-family: Roboto !important;
+    font-weight: 500 !important;
+    font-size: 2.5rem !important;
+    margin-top: 10px !important;
+}
+
+h5{
+    font-family: Roboto !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    margin-top: 5px !important;
+}
+

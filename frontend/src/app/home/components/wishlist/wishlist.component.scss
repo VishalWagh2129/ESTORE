@@ -1,0 +1,125 @@
+.wishlist-section {
+    background-color: #ededed; // Optional: background color for the section
+    padding: 20px 0; // Optional: padding for spacing
+
+    .wish-header {
+        .container {
+            .row {
+                .title {
+                    display: flex;
+                    justify-content: center; // Center align horizontally
+                    align-items: center; // Center align vertically if needed
+                    width: 100%; // Ensure the container takes full width
+
+                    h1 {
+                        margin: 0; // Remove default margin
+                        font-size: 2em; // Adjust font size as needed
+                        text-align: center; // Ensure text is centered within its container
+                        color: #333; // Optional: color for the header text
+                    }
+                }
+            }
+        }
+    }
+
+    .wish-items {
+        margin-top: 5rem;
+
+        .container {
+            .row {
+                &.wish-header {
+                    display: flex;
+                    font-weight: bold;
+                    border: 2px solid #ddd; // Bottom border for the header row
+                    background-color: #e6d4e2; // Background color for the header
+
+                    .col {
+                        flex: 1; // Ensure columns take equal space
+                        padding: 15px;
+                        text-align: center; // Center align text within columns
+                    }
+                }
+
+                &.wish-item {
+                    display: flex;
+                    align-items: center; // Align items vertically in the center
+                    border: 1px solid #ddd; // Bottom border for item rows
+
+                    // .col-new {
+                    //     flex: 1; // Ensure columns take equal space
+                    //     padding: 10px;
+                    //     text-align: center;
+
+                    //     .cart-edit-container {
+                    //         display: flex;
+                    //         flex-direction: column;
+                    //         align-items: center;
+                    //         justify-content: center;
+                    //         height: 100%; // Ensure container takes full height of column
+
+                    //         .btn-group {
+                    //             display: flex;
+                    //             align-items: center;
+                    //             margin-top: 1em;
+
+                    //             .btn {
+                    //                 padding: 0.5em 1em;
+                    //             }
+                    //         }
+
+                    //         .btn-outline-danger {
+                    //             display: flex;
+                    //             align-items: center;
+                    //         }
+                    //     }
+                    // }
+
+                    .col {
+                        flex: 1; // Ensure columns take equal space
+                        padding: 10px;
+                        text-align: center; // Center align text within columns
+
+                        &.product-col {
+                            display: flex;
+                            align-items: center;
+                            // Center align image and text vertically
+
+                            .product-image {
+                                width: 150px;
+                                height: 150px;
+                                object-fit: contain; // Ensure the image fits within the specified dimensions
+                                margin-right: 10px; // Space between image and product name
+                            }
+
+                            .product-name {
+                                font-size: 1.2em; // Adjust font size as needed
+                                margin: 0;
+                                line-height: 1.2;
+                                font-weight: 500; // Ensure line height is appropriate for readability
+                            }
+
+                            .a{
+                                cursor: pointer;
+                            }
+                        }
+
+                        .product-name {
+                            font-size: 1.2em; // Adjust font size as needed
+                            margin: 0;
+                            line-height: 1.2;
+                            font-weight: 500; // Ensure line height is appropriate for readability
+                        }
+
+                        button {
+                            padding: 5px 10px;
+                            font-size: 0.9em;
+                            border: none;
+                            border-radius: 0.3em;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
