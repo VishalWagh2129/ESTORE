@@ -13,7 +13,7 @@ export interface Cart {
 }
 
 export interface DeliveryAddress {
-    userName: string;
+    username: string;
     address: string;
     city: string;
     state: string;

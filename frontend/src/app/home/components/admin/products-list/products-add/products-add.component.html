@@ -52,8 +52,7 @@
                     <mat-form-field class="full-width">
                         <mat-label>Price</mat-label>
                         <input matInput placeholder="Enter Price" formControlName="price" class="mt-2" type="number">
-                        <div *ngIf="submitted && productsForm.get('price').hasError('required')"
-                            class="text-danger mt-2">
+                        <div *ngIf="submitted && productsForm.get('price').hasError('required')" class="text-danger mt-2">
                             Price is required
                         </div>
                     </mat-form-field>
@@ -62,11 +61,19 @@
                 <div class="col-md-12 col-12 mb-2">
                     <mat-form-field class="full-width">
                         <mat-label>Ratings</mat-label>
-                        <input matInput min=0 max="5" placeholder="Enter Ratings" formControlName="rating" class="mt-2"
-                            type="number">
-                        <div *ngIf="submitted && productsForm.get('rating').hasError('required')"
-                            class="text-danger mt-2">
-                            Rating is required
+                        <input matInput placeholder="Enter Ratings" formControlName="rating" class="mt-2" type="number">
+                        <div *ngIf="submitted && productsForm.get('rating').hasError('required')" class="text-danger mt-2">
+                            Ratings is required
+                        </div>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-12 col-12 mb-2">
+                    <mat-form-field class="full-width">
+                        <mat-label>Quantity Available</mat-label>
+                        <input matInput min=0 placeholder="Enter Quantity" formControlName="quantity" class="mt-2" type="number">
+                        <div *ngIf="submitted && productsForm.get('quantity').hasError('required')" class="text-danger mt-2">
+                            Quantity is required
                         </div>
                         <!-- <div *ngIf="submitted && productsForm.get('quantity').error?.('pattern')" class="text-danger mt-2">
                             Quantity should be positive Number
@@ -78,8 +85,8 @@
                     <mat-form-field class="full-width">
                         <mat-label>Brand</mat-label>
                         <mat-select formControlName="brand" class="mt-2">
-                            <mat-option *ngFor="let status of brandsData" [value]="status.NAME">
-                                {{ status.NAME }}
+                            <mat-option *ngFor="let status of brandsData" [value]="status.udid">
+                                {{ status.brand_name }}
                             </mat-option>
                         </mat-select>
                         <div *ngIf="submitted && productsForm.get('brand').hasError('required')"
@@ -93,8 +100,8 @@
                     <mat-form-field class="full-width">
                         <mat-label>Category</mat-label>
                         <mat-select formControlName="category" class="mt-2">
-                            <mat-option *ngFor="let category of categoryData" [value]="category.id">
-                                {{ category.category }}
+                            <mat-option *ngFor="let status of categoryData" [value]="status.udid">
+                                {{ status.category_name }}
                             </mat-option>
                         </mat-select>
                         <div *ngIf="submitted && productsForm.get('category').hasError('required')"
@@ -106,11 +113,26 @@
 
                 <div class="col-md-12 col-12 mb-2">
                     <mat-form-field class="full-width">
+                        <mat-label>Sub - Category</mat-label>
+                        <mat-select formControlName="sub" class="mt-2">
+                            <mat-option *ngFor="let status of subCategoryData" [value]="status.udid">
+                                {{ status.subcategory_name }}
+                            </mat-option>
+                        </mat-select>
+                        <div *ngIf="submitted && productsForm.get('sub').hasError('required')"
+                            class="text-danger mt-2">
+                            Sub-Category is required
+                        </div>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-12 col-12 mb-2">
+                    <mat-form-field class="full-width">
                         <mat-label>Origin Country</mat-label>
                         <input matInput placeholder="Enter Country Origin" formControlName="origin" class="mt-2">
                         <div *ngIf="submitted && productsForm.get('origin').hasError('required')"
                             class="text-danger mt-2">
-                            Country of Origin is required
+                             Country of Origin is required
                         </div>
                     </mat-form-field>
                 </div>
@@ -121,26 +143,47 @@
                         <input matInput placeholder="Enter Keywords" formControlName="keyword" class="mt-2">
                         <div *ngIf="submitted && productsForm.get('keyword').hasError('required')"
                             class="text-danger mt-2">
-                            Keywords are required
+                            Keywords is required
                         </div>
                     </mat-form-field>
                 </div>
 
-
-                <div class="col-md-12 col-12 mb-5">
-                    <label class="upload-label">Image</label>
-                    <input class="image-upload" type="file" (change)="onFileSelect($event)" />
-                    <img *ngIf="selectedFileBase64" [src]="selectedFileBase64" alt="Uploaded Image"
-                        class="uploaded-image">
+                <div class="col-md-12 col-12 mb-2">
+                    <mat-form-field class="full-width">
+                        <mat-label>Product Image</mat-label>
+                        <input matInput placeholder="Enter Image" formControlName="img" class="mt-2">
+                        <div *ngIf="submitted && productsForm.get('img').hasError('required')"
+                            class="text-danger mt-2">
+                            Keywords is required
+                        </div>
+                    </mat-form-field>
                 </div>
 
+                <!-- <div class="col-md-12 col-12 mb-2">
+                    <label class="mat-label">Availability</label>
+                    <mat-radio-group formControlName="available" class="mt-2">
+                        <div class="radio-buttons">
+                            <mat-radio-button value="Available">Available</mat-radio-button>
+                            <mat-radio-button value="Not Available">Not Available</mat-radio-button>
+                        </div>
+                    </mat-radio-group>
+                    <div *ngIf="submitted && productsForm.get('available').hasError('required')"
+                        class="text-danger mt-2">
+                        Availability is required
+                    </div>
+                </div> -->
 
+                <!-- <div class="col-md-12 col-12 mb-5">
+                    <label class="upload-label">Image</label>
+                    <input class="image-upload" type="file" (change)="onFileSelect($event)" />
+                    <img *ngIf="selectedFileBase64" [src]="selectedFileBase64" alt="Uploaded Image" class="uploaded-image">
+                </div> -->
+                
+                
 
                 <div class="col-md-12 col-12 mb-2">
-                    <button *ngIf="mode!=='edit'" mat-raised-button color="primary" type="submit"
-                        (click)='onSubmit()'>Submit</button>
-                    <button *ngIf="mode==='edit'" mat-raised-button color="primary" type="submit"
-                        (click)='onUpdate()'>Update</button>
+                    <button *ngIf="mode!=='edit'" mat-raised-button color="primary" type="submit" (click)='onSubmit()'>Submit</button>
+                    <button *ngIf="mode==='edit'" mat-raised-button color="primary" type="submit" (click)='onUpdate()'>Update</button>
                 </div>
 
             </div>

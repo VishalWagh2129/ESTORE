@@ -9,51 +9,22 @@ import { Observable } from 'rxjs';
 export class ProductsService {
 
   // private baseUrl = 'http://localhost:3000/api';
-  baseUrl : string = 'https://estore-3ey7.onrender.com/api';
+  baseUrl : string = 'https://estore-rp4q.onrender.com/api';
 
   constructor(private httpClient:HttpClient) { }
 
   getAllProducts(query?:string):Observable<Product[]>{
-    let url:string = 'https://estore-3ey7.onrender.com/api/getAllProducts';
+    // let url:string = 'http://localhost:3000/api/getAllProducts';
+    let url:string = 'https://estore-rp4q.onrender.com/api/getAllProducts';
     if(query){
       url += '?' + query;
     }
     return this.httpClient.get<Product[]>(url)
   }
 
-  getProduct(id: number): Observable<Product[]> {
-    const url: string = 'https://estore-3ey7.onrender.com/api/getProductById/' + id;
+  getProduct(id: string): Observable<Product[]> {
+    // let url:string = 'http://localhost:3000/api/getProductById/' + id;
+    const url: string = 'https://estore-rp4q.onrender.com/api/getProductById/' + id;
     return this.httpClient.get<Product[]>(url);
-  }
-
-  getAll(): Observable<any> {
-    return this.httpClient.get<any>(`${this.baseUrl}/getAllProducts`);
-  }
-
-  // Method to add a new product
-  save(product: any): Observable<any> {
-    return this.httpClient.post<any>(`${this.baseUrl}/add-Product`, product);
-  }
-
-  // Method to get a product by ID
-  getById(id: string): Observable<any> {
-    return this.httpClient.get<any>(`${this.baseUrl}/getProductById/${id}`);
-  }
-
-  update(id: number, product: any): Observable<any> {
-    return this.httpClient.put<any>(`${this.baseUrl}/updateProduct/${id}`, product);
-  }
-
-  // Method to delete a product by ID
-  delete(id: string): Observable<any> {
-    return this.httpClient.delete<any>(`${this.baseUrl}/deleteProduct/${id}`);
-  }
-
-  upload(data:any):Observable<any>{
-    return this.httpClient.post<any>(`${this.baseUrl}/saveLogo`, data);
-  }
-
-  getAllLogo():Observable<any>{
-    return this.httpClient.get<any>(`${this.baseUrl}/getAllLogo`)
   }
 }

@@ -15,6 +15,7 @@ import { filter, Subscription } from 'rxjs';
 import { FooterComponent } from './components/footer/footer.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { UserServiceService } from './services/users/user-service.service';
+import { SubCategoriesStoreItem } from './services/sub-category/subcategory.storeitem';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -29,6 +30,7 @@ export class HomeComponent {
 
   constructor(private categoriesStoreItem:CategoriesStoreItem,
     private productsStoreItem:ProductsStoreItem,
+    private subCategoriesStoreItem:SubCategoriesStoreItem,
     private router:Router,
     private userService:UserServiceService
   ){
@@ -46,8 +48,8 @@ export class HomeComponent {
         router.navigate(['home/products']);
       }
     });
-
     this.categoriesStoreItem.loadCategories();
+    this.subCategoriesStoreItem.loadSubCategories();
     this.productsStoreItem.loadProducts();
   }
 

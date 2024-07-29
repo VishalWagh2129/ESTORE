@@ -6,12 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RazorpayService {
 
-    private baseUrl = 'http://localhost:3000/api';
+    // private baseUrl = 'http://localhost:3000/api';
+    private baseUrl = 'https://estore-rp4q.onrender.com/api';
 
   constructor(private http: HttpClient) { }
 
   createOrder(amount: number, currency: string = 'INR') {
-    return this.http.post(`${this.baseUrl}/create-order`, { amount, currency });
+    return this.http.post(`${this.baseUrl}/add`, { amount, currency });
   }
 
   getOptions(orderId: string, amount: number, key: string) {
@@ -44,11 +45,12 @@ export class RazorpayService {
         status='Failed';
     }
     const paymentDetails = {
-      ORDER_ID: response.razorpay_order_id,
-      PAYMENT_ID: response.razorpay_payment_id,
-      PAYMENT_STATUS: status, // Update this based on actual status
-      AMOUNT:amount,
-      CURRENCY:currency
+      order_id: response.razorpay_order_id,
+      payment_id: response.razorpay_payment_id,
+      payment_status: status, // Update this based on actual status
+      amount:amount,
+      currency:currency,
+      record_status:'ACTIVE'
     };
     this.http.post(`${this.baseUrl}/save-payment`, paymentDetails).subscribe({
       next: (result) => {

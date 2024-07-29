@@ -10,7 +10,7 @@ import { loggedInUser, loginToken, User } from '../../components/types/user.type
 export class UserServiceService {
 
   // apiUrl:string = 'http://localhost:3000/api';
-  apiUrl : string = 'https://estore-3ey7.onrender.com/api';
+  apiUrl : string = 'https://estore-rp4q.onrender.com/api';
   private autoLogoutTimer: any;
   private authToken:string;
   private isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject(
@@ -48,13 +48,13 @@ export class UserServiceService {
 
   createUser(user: User): Observable<any> {
     // const url: string = 'http://localhost:3000/api/signup';
-    const url:string = 'https://estore-3ey7.onrender.com/api/signup';
+    const url:string = 'https://estore-rp4q.onrender.com/api/signup';
     return this.httpClient.post(url, user);
   }
 
   login(email: string, password: string) {
     // const url: string = 'http://localhost:3000/api/login';
-    const url:string = 'https://estore-3ey7.onrender.com/api/login';
+    const url:string = 'https://estore-rp4q.onrender.com/api/login';
     return this.httpClient.post(url, { email: email, password: password });
   }
 

@@ -12,8 +12,8 @@ import { PastOrder,PastOrderProduct } from '../../components/types/order.type';
 })
 export class OrderService {
 
-  // apiUrl:string='http://localhost:3000/api';
-  apiUrl : string = 'https://estore-3ey7.onrender.com/api';
+  apiUrl:string='http://localhost:3000/api';
+  // apiUrl : string = 'https://estore-3ey7.onrender.com/api';
 
   constructor(private httpClient: HttpClient,
     private cartStore: CartStoreItem,
@@ -24,12 +24,12 @@ export class OrderService {
     deliveryAddress: DeliveryAddress,
     userEmail: string
   ): Observable<any> {
-    // const url: string = 'http://localhost:3000/api/add';
-    const url : string = 'https://estore-3ey7.onrender.com/api/add';
+    // const url: string = 'http://localhost:3000/api/createOrder';
+    const url : string = 'https://estore-rp4q.onrender.com/api/createOrder';
     const orderDetails: OrderItem[] = [];
     this.cartStore.cart.products.forEach((product) => {
       const orderItem: OrderItem = {
-        productId: product.product.id,
+        product_id: product.product.udid,
         price: product.product.price,
         qty: product.quantity,
         amount: product.amount,
@@ -38,7 +38,7 @@ export class OrderService {
     });
 
     const order: Order = {
-      userName: deliveryAddress.userName,
+      userName: deliveryAddress.username,
       address: deliveryAddress.address,
       city: deliveryAddress.city,
       state: deliveryAddress.state,
@@ -54,7 +54,7 @@ export class OrderService {
 
   getOrders(userEmail: string): Observable<PastOrder[]> {
     // const url: string = `http://localhost:3000/api/allorders?userEmail=${userEmail}`;
-    const url : string = `https://estore-3ey7.onrender.com/api/allorders?userEmail=${userEmail}`;
+    const url : string = `https://estore-rp4q.onrender.com/api/allorders?userEmail=${userEmail}`;
 
     return this.httpClient.get<PastOrder[]>(url, {
       headers: { authorization: this.userservice.token },
@@ -63,7 +63,7 @@ export class OrderService {
 
   getOrderProducts(orderId: number): Observable<PastOrderProduct[]> {
     // const url: string = `http://localhost:3000/api/orderproducts?orderId=${orderId}`;
-    const url : string = `https://estore-3ey7.onrender.com/api/orderproducts?orderId=${orderId}`;
+    const url : string = `https://estore-rp4q.onrender.com/api/orderproducts?orderId=${orderId}`;
 
     return this.httpClient.get<PastOrderProduct[]>(url, {
       headers: { authorization: this.userservice.token },

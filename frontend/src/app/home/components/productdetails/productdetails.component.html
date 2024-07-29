@@ -4,7 +4,7 @@
             <div class="row d-flex">
                 <div class="col-md-12 col-lg-6 col-12" style="background-color: white; padding: 5%;">
                     <div class="img-zoom-container d-flex justify-content-center align-items-center">
-                        <img [src]="'../../../../assets/images/' + product?.product_img" class="img-fluid" />
+                        <img [src]="'../../../../assets/images/' + product?.product_image" class="img-fluid" />
                     </div>
                 </div>
                 <div class="col-md-12 col-lg-6 col-12"
@@ -16,12 +16,12 @@
                             <span class="price"> {{ product?.price | currency }} </span>
                         </div>
                         <div class="my-3 product-description">
-                            {{ product?.product_description }}
+                            {{ product?.description }}
                         </div>
                         <hr />
                         <div class="d-flex align-items-center product-availability rounded">
                             <span style="font-weight: 500;margin-left: 5px;">Availability :</span>
-                            <span class="alb">112 Products Available</span>
+                            <span class="alb">{{product?.quantity}} Products Available</span>
                         </div>
                         <div class="prdt-size my-3">
                             <label for="size-select" style="font-weight: 500;">Size:</label>
@@ -78,7 +78,7 @@
                             <div class="tab-pane fade show active" id="description" role="tabpanel"
                                 aria-labelledby="description-tab">
                                 <h3>Introduction</h3>
-                                <p>{{ product?.product_description }}</p>
+                                <p>{{ product?.description }}</p>
                             </div>
                             <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
                                 <p>Reviews will be shown here.</p>

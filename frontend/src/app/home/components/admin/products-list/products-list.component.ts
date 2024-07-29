@@ -1,23 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute } from '@angular/router';
 import { AdminProductsService } from '../../../services/admin-products/admin-products.service';
+import { MatRadioModule } from '@angular/material/radio';
 import { ComponentManagerService } from '../../../services/component-manager.service';
+import { BrandService } from '../../../services/brand/brand.service';
 import { CurrentUserModel } from '../../types/common.model';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+
 
 @Component({
-  selector: 'app-admin-products',
+  selector: 'app-products-list',
   standalone: true,
-  imports: [MatTableModule,CommonModule,RouterModule,MatIconModule],
-  templateUrl: './admin-products.component.html',
-  styleUrl: './admin-products.component.scss'
+  imports: [RouterModule, MatRadioModule,MatTableModule,MatIconModule, CommonModule, FormsModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatButtonModule, ReactiveFormsModule],
+  templateUrl: './products-list.component.html',
+  styleUrl: './products-list.component.scss'
 })
-export class AdminProductsComponent {
+export class ProductsListComponent {
 
   productsData:any=[];
   user:CurrentUserModel = new CurrentUserModel();
@@ -57,7 +66,7 @@ export class AdminProductsComponent {
   displayedColumns: string[] = ['name', 'description','price','action'];
 
   editProduct(data){  
-    this.router.navigate(['/admin/products/add/'], { queryParams: { id: data.UDID, mode:'edit'} });
+    this.router.navigate(['/admin/products/add/'], { queryParams: { id: data.udid, mode:'edit'} });
   }
 
   addProduct(){

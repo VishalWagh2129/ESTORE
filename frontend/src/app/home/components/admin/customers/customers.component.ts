@@ -40,7 +40,7 @@ export class CustomersComponent {
 
   getAllCustomers(){
     this.userService.getAllCustomers().subscribe((res:any)=>{
-      if(res.success){
+      if(res){
         this.customerData = res.data;
       }
     });

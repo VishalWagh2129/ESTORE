@@ -27,7 +27,7 @@ export class CartStoreItem extends StoreItem<Cart> {
 
     addProduct(product: Product): void {
         const cartProduct: CartItem | undefined = this.cart.products.find(
-            (cartProduct) => cartProduct.product.id === product.id
+            (cartProduct) => cartProduct.product.udid === product.udid
         );
 
         if (!cartProduct) {
@@ -46,7 +46,7 @@ export class CartStoreItem extends StoreItem<Cart> {
 
     decreaseProductQuantity(cartItem: CartItem): void {
         const cartProduct: CartItem | undefined = this.cart.products.find(
-            (cartProduct) => cartProduct.product.id === cartItem.product.id
+            (cartProduct) => cartProduct.product.udid === cartItem.product.udid
         );
         if (cartProduct) {
             if (cartProduct.quantity === 1) {
@@ -62,7 +62,7 @@ export class CartStoreItem extends StoreItem<Cart> {
 
     removeProduct(cartItem: CartItem): void {
         this.cart.products = this.cart.products.filter(
-            (item) => item.product.id !== cartItem.product.id
+            (item) => item.product.udid !== cartItem.product.udid
         );
         this.cart.totalProducts -= cartItem.quantity;
         this.cart.totalAmount -= cartItem.amount;

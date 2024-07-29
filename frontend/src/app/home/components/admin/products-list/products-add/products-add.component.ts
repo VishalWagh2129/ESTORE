@@ -15,15 +15,16 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ComponentManagerService } from '../../../../services/component-manager.service';
 import { BrandService } from '../../../../services/brand/brand.service';
 import { CategoryService } from '../../../../services/category/category.service';
+import { SubcategoryService } from '../../../../services/sub-category/subcategory.service';
 
 @Component({
-  selector: 'app-admin-products-add',
+  selector: 'app-products-add',
   standalone: true,
   imports: [RouterModule, MatRadioModule, CommonModule, FormsModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatButtonModule, ReactiveFormsModule],
-  templateUrl: './admin-products-add.component.html',
-  styleUrl: './admin-products-add.component.scss'
+  templateUrl: './products-add.component.html',
+  styleUrl: './products-add.component.scss'
 })
-export class AdminProductsAddComponent {
+export class ProductsAddComponent {
 
   productsForm: FormGroup;
   submitted: boolean = false;
@@ -34,7 +35,8 @@ export class AdminProductsAddComponent {
   user: any;
   selectedFile: File | null = null;
   selectedFileBase64: string | null = null;
-  categoryData:any;
+  categoryData:any=[];
+  subCategoryData:any=[];
 
   constructor(private fb: FormBuilder,
     private router: Router,
@@ -43,12 +45,14 @@ export class AdminProductsAddComponent {
     private productsService: AdminProductsService,
     private componentManagerService: ComponentManagerService,
     private brandService: BrandService,
-    private categoryService:CategoryService
+    private categoryService:CategoryService,
+    private subcategoryService:SubcategoryService
   ) { }
 
   ngOnInit() {
     this.getAllActiveBrands();
-    this.getAllCategory();
+    this.getAllCategories();
+    this.getAllSubCategory();
     this.activatedRoute.queryParams.subscribe((params: any) => {
       if (!!params.id) {
         this.productId = params.id;
@@ -63,9 +67,12 @@ export class AdminProductsAddComponent {
       price: ['', Validators.required],
       origin: ['', Validators.required],
       brand: ['', Validators.required],
+      quantity: ['', Validators.required],
+      img: ['', Validators.required],
       category: ['', Validators.required],
+      keyword: ['', Validators.required],
+      sub: ['', Validators.required],
       rating: ['', Validators.required],
-      keyword: ['', Validators.required]
     });
     this.user = this.componentManagerService.user;
 
@@ -79,12 +86,20 @@ export class AdminProductsAddComponent {
     });
   }
 
-  getAllCategory() {
-    this.categoryService.getAllMainCategory().subscribe((res: any) => {
+  getAllCategories(){
+    this.categoryService.getAllActiveCategories().subscribe((res:any)=>{
       if (res.success) {
         this.categoryData = res.data;
       }
-    });
+    })
+  }
+
+  getAllSubCategory(){
+    this.subcategoryService.getAll().subscribe((res:any)=>{
+      if (res.success) {
+        this.subCategoryData = res.data;
+      }
+    })
   }
 
   onFileSelect(event: any): void {
@@ -103,17 +118,20 @@ export class AdminProductsAddComponent {
     this.submitted = true;
     if (this.productsForm.valid) {
       const data = {
-        name: this.productsForm.value.name,
-        createdBy: this.user.UDID,
-        updatedBy: this.user.UDID,
+        product_name: this.productsForm.value.name,
+        created_by: this.user.UDID,
+        updated_by: this.user.UDID,
         description: this.productsForm.value.description,
-        status: this.productsForm.value.status,
+        record_status: this.productsForm.value.status,
         price: this.productsForm.value.price,
         quantity: this.productsForm.value.quantity,
-        brand: this.productsForm.value.brand,
+        brand_id: this.productsForm.value.brand,
         origin: this.productsForm.value.origin,
-        availability: this.productsForm.value.available,
-        image: this.selectedFileBase64
+        product_image: this.productsForm.value.img,
+        category_id:this.productsForm.value.category,
+        subcategory_id:this.productsForm.value.sub,
+        ratings:this.productsForm.value.rating,
+        keywords:this.productsForm.value.keyword
       };
       this.productsService.save(data).subscribe((res: any) => {
         if (res.success) {
@@ -135,17 +153,19 @@ export class AdminProductsAddComponent {
     this.submitted = true;
     if (this.productsForm.valid) {
       const data = {
-        name: this.productsForm.value.name,
-        createdBy: this.user.UDID,
-        updatedBy: this.user.UDID,
+        product_name: this.productsForm.value.name,
+        updated_by: this.user.UDID,
         description: this.productsForm.value.description,
-        status: this.productsForm.value.status,
+        record_status: this.productsForm.value.status,
         price: this.productsForm.value.price,
         quantity: this.productsForm.value.quantity,
-        brand: this.productsForm.value.brand,
+        brand_id: this.productsForm.value.brand,
         origin: this.productsForm.value.origin,
-        availability: this.productsForm.value.available,
-        image: this.selectedFileBase64
+        product_image: this.productsForm.value.img,
+        category_id:this.productsForm.value.category,
+        subcategory_id:this.productsForm.value.sub,
+        ratings:this.productsForm.value.rating,
+        keywords:this.productsForm.value.keyword
       };
       this.productsService.update(this.productId, data).subscribe((res: any) => {
         if (res.success) {
@@ -174,40 +194,37 @@ export class AdminProductsAddComponent {
 
   setData(data) {
     if (this.mode === 'edit') {
-      this.productsForm.get('name').setValue(data.NAME);
-      this.productsForm.get('description').setValue(data.DESCRIPTION);
-      this.productsForm.get('status').setValue(data.RECORD_STATUS);
-      this.productsForm.get('price').setValue(data.PRICE);
-      this.productsForm.get('available').setValue(data.AVAILABILITY);
-      this.productsForm.get('origin').setValue(data.ORIGIN_COUNTRY);
-      this.productsForm.get('quantity').setValue(data.QUANTITY_AVAILABLE);
-      this.productsForm.get('brand').setValue(data.BRAND);
-      if (data.IMAGE) {
-        this.convertBufferToBase64(data.IMAGE.data)
-          .then(base64Image => {
-            this.selectedFileBase64 = base64Image;
-          })
-          .catch(error => {
-            console.error('Error converting buffer to base64:', error);
-          });
-      }
+      this.productsForm.get('name').setValue(data.product_name);
+      this.productsForm.get('description').setValue(data.description);
+      this.productsForm.get('status').setValue(data.record_status);
+      this.productsForm.get('price').setValue(data.price);
+      this.productsForm.get('keyword').setValue(data.keywords);
+      this.productsForm.get('origin').setValue(data.origin);
+      this.productsForm.get('quantity').setValue(data.quantity);
+      this.productsForm.get('brand').setValue(data.brand_id);
+      this.productsForm.get('rating').setValue(data.ratings);
+      this.productsForm.get('category').setValue(data.category_id);
+      this.productsForm.get('sub').setValue(data.subcategory_id);
+      this.productsForm.get('img').setValue(data.product_image);
+      // if (data.IMAGE) {
+      //   this.convertBufferToBase64(data.IMAGE.data)
+      //     .then(base64Image => {
+      //       this.selectedFileBase64 = base64Image;
+      //     })
+      //     .catch(error => {
+      //       console.error('Error converting buffer to base64:', error);
+      //     });
+      // }
     }
   }
 
-  convertBufferToBase64(bufferData: ArrayBuffer): Promise<string> {
-    return new Promise<string>((resolve, reject) => {
-      const blob = new Blob([new Uint8Array(bufferData)], { type: 'image/jpeg' });
-      const reader = new FileReader();
-      reader.onload = () => {
-        const base64String = reader.result as string;
-        resolve(base64String);
-      };
-      reader.onerror = (error) => {
-        reject(error);
-      };
-      reader.readAsDataURL(blob);
-    });
-  }
 
+  getAllActiveCategories(){
+    this.categoryService.getAllActiveCategories().subscribe((res:any)=>{
+      if(res.success){
+        this.categoryData = res.data;
+      }
+    })
+  }
 
 }

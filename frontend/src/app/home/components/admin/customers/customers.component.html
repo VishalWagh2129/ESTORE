@@ -5,7 +5,7 @@
         <table mat-table [dataSource]="customerData" class="mat-elevation-z8">
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef>Name</th>
-                <td mat-cell *matCellDef="let brand">{{ brand.firstName }} {{ brand.lastName }}</td>
+                <td mat-cell *matCellDef="let brand">{{ brand.firstname }} {{ brand.lastname }}</td>
             </ng-container>
 
             <ng-container matColumnDef="email">

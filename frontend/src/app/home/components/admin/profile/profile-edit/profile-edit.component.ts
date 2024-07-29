@@ -64,9 +64,9 @@ export class ProfileEditComponent {
 
   setData(data) {
     if (this.mode === 'edit') {
-      this.profileForm.get('name').setValue(data.USERNAME);
-      this.profileForm.get('email').setValue(data.EMAIL_ID);
-      this.profileForm.get('status').setValue(data.RECORD_STATUS);
+      this.profileForm.get('name').setValue(data.username);
+      this.profileForm.get('email').setValue(data.email);
+      this.profileForm.get('status').setValue(data.record_status);
     }
   }
 

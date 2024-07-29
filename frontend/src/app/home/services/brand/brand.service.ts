@@ -9,13 +9,13 @@ export class BrandService {
 
 
   // private baseUrl = 'http://localhost:3000/api';
-  baseUrl : string = 'https://estore-3ey7.onrender.com/api';
+  baseUrl : string = 'https://estore-rp4q.onrender.com/api';
 
   constructor(private http: HttpClient) { }
 
   // Save a new brand
   save(brand: any): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/saveBrand`, brand);
+    return this.http.post<any>(`${this.baseUrl}/save-brand`, brand);
   }
 
   getActive(): Observable<any[]> {
@@ -34,11 +34,11 @@ export class BrandService {
 
   // Update an existing brand
   update(id: number, brand: any): Observable<any> {
-    return this.http.put<any>(`${this.baseUrl}/updateBrand/${id}`, brand);
+    return this.http.put<any>(`${this.baseUrl}/update-brand/${id}`, brand);
   }
 
   // Delete a brand by ID
   delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/deleteBrand/${id}`);
+    return this.http.delete<void>(`${this.baseUrl}/delete-brand/${id}`);
   }
 }

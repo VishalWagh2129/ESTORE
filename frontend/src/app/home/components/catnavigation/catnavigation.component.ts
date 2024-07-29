@@ -34,7 +34,7 @@ export class CatnavigationComponent {
   
   
   onCategoryClick(category:Category):void{
-    this.categoryClicked.emit(category.id);
+    this.categoryClicked.emit(category.udid);
   }
 
 }

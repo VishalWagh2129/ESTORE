@@ -11,7 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AuthService {
   // apiUrl:string = 'http://localhost:3000/api';
-  apiUrl : string = 'https://estore-3ey7.onrender.com/api';
+  apiUrl : string = 'https://estore-rp4q.onrender.com/api';
 
   constructor(private http: HttpClient,
      private componentManagerService: ComponentManagerService,
@@ -69,8 +69,8 @@ export class AuthService {
   }
 
   logout(): void {
-    this.cookieService.delete('token'); // Remove JWT token from cookies
-    this.cookieService.delete('currentUser'); // Remove user data from cookies
+    this.cookieService.delete('token');
+    this.cookieService.delete('currentUser');
     this.componentManagerService.user = new CurrentUserModel();
     this.componentManagerService.loggedIn = false;
   }

@@ -38,10 +38,10 @@ export class ProductdetailsComponent implements OnDestroy,OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id: number = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+    const id = this.activatedRoute.snapshot.paramMap.get('id');
     this.subscriptions.add(
-      this.productsService.getProduct(id).subscribe((product) => {
-        this.product = product[0];   
+      this.productsService.getProduct(id).subscribe((res:any) => {
+        this.product = res.data;   
       })
     );
     this.subscriptions.add(

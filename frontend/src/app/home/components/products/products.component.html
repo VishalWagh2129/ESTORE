@@ -1,12 +1,12 @@
 <div class="main-product-container">
-  <div *ngFor="let product of productStore.products$ | async" class="mx-4 p-3 product-card">
+  <div *ngFor="let product of displayedProducts" class="mx-4 p-3 product-card">
     <div class="product-image-container">
-      <a routerLink="../product/{{product.id}}">
-        <img [src]="'../../../../assets/images/' + product.product_img" /></a>
+      <a routerLink="../product/{{product.udid}}">
+        <img [src]="'../../../../assets/images/' + product.product_image" /></a>
     </div>
     <div class="product-info">
       <h5>
-        <a routerLink="../product/{{product.id}}">{{ product.product_name }}</a>
+        <a routerLink="../product/{{product.udid}}">{{ product.product_name }}</a>
       </h5>
       <p class="product-price">{{ product.price | currency }}</p>
       <p><app-rating [score]='product.ratings'></app-rating></p>
@@ -21,6 +21,10 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="pagination">
+    <mat-paginator [length]="totalProducts" [pageSize]="pageSize" [pageSizeOptions]="[4, 8, 12]" (page)="onPageChange($event)">
+    </mat-paginator>
   </div>
   <div *ngIf="!productStore.products.length">
     No Products Found

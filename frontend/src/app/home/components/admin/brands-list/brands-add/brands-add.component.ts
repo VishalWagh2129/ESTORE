@@ -57,11 +57,11 @@ export class BrandsAddComponent {
     this.submitted = true;
     if (this.brandForm.valid) {
       const data = {
-        name: this.brandForm.value.name,
-        createdBy: this.user.UDID,
-        updatedBy:this.user.UDID,
+        brand_name: this.brandForm.value.name,
+        created_by: this.user.UDID,
+        updated_by:this.user.UDID,
         description: this.brandForm.value.description,
-        status: this.brandForm.value.status
+        record_status: this.brandForm.value.status
       };
       this.brandService.save(data).subscribe((res: any) => {
         if (res.success) {
@@ -83,11 +83,11 @@ export class BrandsAddComponent {
     this.submitted = true;
     if (this.brandForm.valid) {
       const data = {
-        name: this.brandForm.value.name,
-        createdBy: this.user.UDID,
-        updatedBy:this.user.UDID,
+        brand_name: this.brandForm.value.name,
+        created_by: this.user.UDID,
+        updated_by:this.user.UDID,
         description: this.brandForm.value.description,
-        status: this.brandForm.value.status
+        record_status: this.brandForm.value.status
       };
       this.brandService.update(this.brandId,data).subscribe((res: any) => {
         if (res.success) {
@@ -116,9 +116,9 @@ export class BrandsAddComponent {
 
   setData(data){
     if(this.mode === 'edit'){
-      this.brandForm.get('name').setValue(data.NAME);
-      this.brandForm.get('description').setValue(data.DESCRIPTION);
-      this.brandForm.get('status').setValue(data.RECORD_STATUS);
+      this.brandForm.get('name').setValue(data.brand_name);
+      this.brandForm.get('description').setValue(data.description);
+      this.brandForm.get('status').setValue(data.record_status);
     }
   }
 

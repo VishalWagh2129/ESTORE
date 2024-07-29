@@ -82,12 +82,9 @@ h4.back-btn {
 }
 
 .uploaded-image {
-    max-width: 100%;
-    /* Set maximum width */
-    max-height: 200px;
-    /* Set maximum height */
-    display: block;
-    /* Ensure the image is displayed as a block element */
-    margin-top: 5px;
-    /* Add some margin for spacing */
+    max-width: 100%; /* Set maximum width */
+    max-height: 200px; /* Set maximum height */
+    display: block; /* Ensure the image is displayed as a block element */
+    margin-top: 5px; /* Add some margin for spacing */
 }
+

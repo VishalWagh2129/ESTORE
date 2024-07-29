@@ -108,7 +108,7 @@ export class CartComponent implements OnInit, OnDestroy {
   onSubmit(): void {
     if (this.userService.isUserAuthenticated) {
       const deliveryAddress: DeliveryAddress = {
-        userName: this.orderForm.get('name')?.value,
+        username: this.orderForm.get('name')?.value,
         address: this.orderForm.get('address')?.value,
         city: this.orderForm.get('city')?.value,
         state: this.orderForm.get('state')?.value,
@@ -120,18 +120,18 @@ export class CartComponent implements OnInit, OnDestroy {
           .subscribe({
             next: (result) => {
               const amount = this.cartStore.cart.totalAmount;
-              // this.razorpayService.createOrder(amount).subscribe((res: any) => {
-              //   const options = this.razorpayService.getOptions(res.order.id, amount, res.key);
-              //   const rzp1 = new Razorpay(options);
-              //   rzp1.open();
-              // });
-              const key = "rzp_test_Aa7UfjnuT15I7E";
-              const widgetConfig = {
-                "key": key,
-                "amount": amount,
-              };
-              const rzpAffordabilitySuite = new RazorpayAffordabilitySuite(widgetConfig);
-              rzpAffordabilitySuite.render();
+              this.razorpayService.createOrder(amount).subscribe((res: any) => {
+                const options = this.razorpayService.getOptions(res.order.id, amount, res.key);
+                const rzp1 = new Razorpay(options);
+                rzp1.open();
+              });
+              // const key = "rzp_test_Aa7UfjnuT15I7E";
+              // const widgetConfig = {
+              //   "key": key,
+              //   "amount": amount,
+              // };
+              // const rzpAffordabilitySuite = new RazorpayAffordabilitySuite(widgetConfig);
+              // rzpAffordabilitySuite.render();
               this.cartStore.clearCart();
               this.alertType = 0;
               this.alertMessage = 'Order registered successfully!';

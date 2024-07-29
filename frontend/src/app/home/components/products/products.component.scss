@@ -1,6 +1,6 @@
 .main-product-container {
-    display: flex;
-    justify-content: space-evenly;
+    // display: flex;
+    // justify-content: space-evenly;
     flex-wrap: wrap;
     flex-direction: row;
 
@@ -22,6 +22,8 @@
                 display: flex;
                 justify-content: center;
                 border-radius: 0.3em;
+                height: 360px;
+                width: 280px;
             }
         }
 
@@ -74,6 +76,13 @@
                 box-shadow: inset #dcdcdc 1px 2px 5px;
             }
         }
+    }
+
+    .pagination {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
     }
 }
 

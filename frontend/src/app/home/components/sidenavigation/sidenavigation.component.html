@@ -16,15 +16,15 @@
             [attr.data-bs-target]="'#collapse' + i"
           >
             <div class="category-title">
-              <a href="#">{{ mainCategory.category }}</a>
+              <a href="#">{{ mainCategory.category_name }}</a>
             </div>
           </button>
         </div>
         <div [id]="'collapse' + i" class="accordion-collapse collapse show">
           <div class="accordion-body">
             <ul>
-              <li *ngFor='let subCategory of getCategories(mainCategory.id)'  class="sub-items">
-                <a (click)="onSubCategoryClick(subCategory)">{{subCategory.category}}</a></li>
+              <li *ngFor='let subCategory of getSubCategories(mainCategory.udid)'  class="sub-items">
+                <a (click)="onSubCategoryClick(subCategory)">{{subCategory.subcategory_name}}</a></li>
             </ul>
           </div>
         </div>

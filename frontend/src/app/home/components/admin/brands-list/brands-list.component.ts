@@ -54,10 +54,10 @@ export class BrandsListComponent {
       this.getAllBrands();
     });
   }
-  displayedColumns: string[] = ['name', 'description','action'];
+  displayedColumns: string[] = ['name', 'description','status','action'];
 
   editBrand(data){  
-    this.router.navigate(['/admin/brands/add/'], { queryParams: { id: data.UDID,mode:'edit'} });
+    this.router.navigate(['/admin/brands/add/'], { queryParams: { id: data.udid,mode:'edit'} });
   }
 
   addBrand(){

@@ -15,13 +15,17 @@ import { ProfileComponent } from './home/components/admin/profile/profile.compon
 import { ProfileEditComponent } from './home/components/admin/profile/profile-edit/profile-edit.component';
 import { BrandsListComponent } from './home/components/admin/brands-list/brands-list.component';
 import { BrandsAddComponent } from './home/components/admin/brands-list/brands-add/brands-add.component';
-import { AdminProductsComponent } from './home/components/admin/admin-products/admin-products.component';
-import { AdminProductsAddComponent } from './home/components/admin/admin-products/admin-products-add/admin-products-add.component';
 import { CustomersComponent } from './home/components/admin/customers/customers.component';
 import { CustomersOrderComponent } from './home/components/admin/customers-order/customers-order.component';
 import { AuthGuardService } from './home/services/auth-guard.service';
 import { CustomerEditComponent } from './home/components/admin/customers/customer-edit/customer-edit.component';
 import { WishlistComponent } from './home/components/wishlist/wishlist.component';
+import { CategoryComponent } from './home/components/admin/category/category.component';
+import { CategoryEditComponent } from './home/components/admin/category/category-edit/category-edit.component';
+import { SubCategoryComponent } from './home/components/admin/sub-category/subcategory.component';
+import { SubCategoryEditComponent } from './home/components/admin/sub-category/subcategory-edit/subcategory-edit.component';
+import { ProductsListComponent } from './home/components/admin/products-list/products-list.component';
+import { ProductsAddComponent } from './home/components/admin/products-list/products-add/products-add.component';
 
 export const routes: Routes = [
 
@@ -32,10 +36,14 @@ export const routes: Routes = [
         children: [
             {path:'profile',component:ProfileComponent},
             {path:'profile/edit',component:ProfileEditComponent},
+            {path:'category',component:CategoryComponent},
+            {path:'category/add',component:CategoryEditComponent},
+            {path:'subcategory',component:SubCategoryComponent},
+            {path:'subcategory/add',component:SubCategoryEditComponent},
             {path:'brands',component:BrandsListComponent},
             {path:'brands/add',component:BrandsAddComponent},
-            {path:'products',component:AdminProductsComponent},
-            {path:'products/add',component:AdminProductsAddComponent},
+            {path:'products',component:ProductsListComponent},
+            {path:'products/add',component:ProductsAddComponent},
             {path:'customers',component:CustomersComponent},
             {path:'customers/edit',component:CustomerEditComponent},
             {path:'customer-order',component:CustomersOrderComponent},

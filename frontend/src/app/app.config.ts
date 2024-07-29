@@ -10,7 +10,8 @@ import { ProductsStoreItem } from './home/services/products/products.storeItems'
 import { CartStoreItem } from './home/services/cart/cart.storeItem';
 import { UserServiceService } from './home/services/users/user-service.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { SubCategoriesStoreItem } from './home/services/sub-category/subcategory.storeitem';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes),UserServiceService,provideHttpClient(),CartStoreItem,CategoriesStoreItem,CategoryService,ProductsStoreItem,ProductsService, provideAnimationsAsync()]
+  providers: [provideRouter(routes),UserServiceService,SubCategoriesStoreItem,provideHttpClient(),CartStoreItem,CategoriesStoreItem,CategoryService,ProductsStoreItem,ProductsService, provideAnimationsAsync()]
 };
