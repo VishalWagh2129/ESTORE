@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CartStoreItem } from '../cart/cart.storeItem';
-import { Order,OrderItem } from '../../components/types/order.type';
-import { DeliveryAddress } from '../../components/types/cart.type';
+import { Order,OrderItem } from '../../home/components/types/order.type';
+import { DeliveryAddress } from '../../home/components/types/cart.type';
 import { UserServiceService } from '../users/user-service.service';
-import { PastOrder,PastOrderProduct } from '../../components/types/order.type';
+import { PastOrder,PastOrderProduct } from '../../home/components/types/order.type';
 
 @Injectable({
   providedIn: 'root'

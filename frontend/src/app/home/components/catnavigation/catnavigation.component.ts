@@ -1,6 +1,6 @@
 import { Component,Output,EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CategoriesStoreItem } from '../../services/category/categories.storeitem';
+import { CategoriesStoreItem } from '../../../services/category/categories.storeitem';
 import { Category } from '../types/categories.data';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';

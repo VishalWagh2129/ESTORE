@@ -9,6 +9,7 @@ const productController = require('../controller/productController');
 const razorpayController = require('../controller/razorpayController');
 const subCategoryController = require('../controller/subcategoryController');
 const userController = require('../controller/userController');
+const pluginController = require('../controller/PluginController');
 
 router.get('/getAllCustomers', userController.getAllCustomers);
 router.get('/getCustomerById/:id', userController.getCustomerById);
@@ -53,5 +54,12 @@ router.post('/createOrder', orderController.addOrder);
 router.get('/allorders', orderController.allorders);
 router.get('/orderproducts', orderController.orderproducts);
 router.get('/getAllOrders', orderController.getAllOrders);
+
+//tawk plugin
+router.post('/createPlugin', pluginController.createPlugin);
+router.get('/getAllPlugins', pluginController.getPlugins);
+router.get('/getPluginById/:id', pluginController.getPluginById);
+router.put('/updatePlugin/:id', pluginController.updatePlugin);
+router.delete('/deletePlugin/:id', pluginController.deletePlugin);
 
 module.exports = router;

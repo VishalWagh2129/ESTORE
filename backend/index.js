@@ -16,6 +16,7 @@ const bodyparser = require('body-parser');
 
 app.use(cors());
 app.use(bodyparser.json());
+app.use(express.json());
 
 app.use('/api', productCategories);
 app.use('/api', products);

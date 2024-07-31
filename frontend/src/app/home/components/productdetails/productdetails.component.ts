@@ -1,17 +1,17 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductsService } from '../../services/products/products.service';
+import { ProductsService } from '../../../services/products/products.service';
 import { Product } from '../../components/types/products.type';
 import { Subscription } from 'rxjs';
 import { RatingComponent } from '../../../shared/components/rating/rating.component';
 import { CommonModule } from '@angular/common';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { CartStoreItem } from '../../services/cart/cart.storeItem';
+import { CartStoreItem } from '../../../services/cart/cart.storeItem';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons'; 
 import { CartItem } from '../types/cart.type';
-import { UserServiceService } from '../../services/users/user-service.service';
+import { UserServiceService } from '../../../services/users/user-service.service';
 import {MatTabsModule} from '@angular/material/tabs';
 
 @Component({

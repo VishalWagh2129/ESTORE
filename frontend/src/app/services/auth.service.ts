@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable,map } from 'rxjs';
 import { jwtDecode } from "jwt-decode";
 import { ComponentManagerService } from './component-manager.service';
-import { CurrentUserModel } from '../components/types/common.model';
+import { CurrentUserModel } from '../home/components/types/common.model';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({

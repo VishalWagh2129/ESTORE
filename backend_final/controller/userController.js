@@ -63,7 +63,6 @@ exports.signup = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-    console.log('ab');
     try {
         const { email, password } = req.body;
         const user = await User.findOne({ email });

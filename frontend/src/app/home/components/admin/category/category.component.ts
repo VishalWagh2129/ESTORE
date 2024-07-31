@@ -4,9 +4,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ComponentManagerService } from '../../../services/component-manager.service';
+import { ComponentManagerService } from '../../../../services/component-manager.service';
 import { CurrentUserModel } from '../../types/common.model';
-import { CategoryService } from '../../../services/category/category.service';
+import { CategoryService } from '../../../../services/category/category.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 

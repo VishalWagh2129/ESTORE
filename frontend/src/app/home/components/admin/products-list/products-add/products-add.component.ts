@@ -10,12 +10,12 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { AdminProductsService } from '../../../../services/admin-products/admin-products.service';
+import { AdminProductsService } from '../../../../../services/admin-products/admin-products.service';
 import { MatRadioModule } from '@angular/material/radio';
-import { ComponentManagerService } from '../../../../services/component-manager.service';
-import { BrandService } from '../../../../services/brand/brand.service';
-import { CategoryService } from '../../../../services/category/category.service';
-import { SubcategoryService } from '../../../../services/sub-category/subcategory.service';
+import { ComponentManagerService } from '../../../../../services/component-manager.service';
+import { BrandService } from '../../../../../services/brand/brand.service';
+import { CategoryService } from '../../../../../services/category/category.service';
+import { SubcategoryService } from '../../../../../services/sub-category/subcategory.service';
 
 @Component({
   selector: 'app-products-add',

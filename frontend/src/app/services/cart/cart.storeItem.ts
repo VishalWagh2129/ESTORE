@@ -1,6 +1,6 @@
-import { StoreItem } from '../../../shared/storeitems';
-import { Cart, CartItem } from '../../components/types/cart.type';
-import { Product } from '../../components/types/products.type';
+import { StoreItem } from '../../shared/storeitems';
+import { Cart, CartItem } from '../../home/components/types/cart.type';
+import { Product } from '../../home/components/types/products.type';
 import { Observable } from 'rxjs';
 
 export class CartStoreItem extends StoreItem<Cart> {

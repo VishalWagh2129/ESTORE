@@ -4,9 +4,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ComponentManagerService } from '../../../services/component-manager.service';
+import { ComponentManagerService } from '../../../../services/component-manager.service';
 import { CurrentUserModel } from '../../types/common.model';
-import { AdminService } from '../../../services/admin/admin.service';
+import { AdminService } from '../../../../services/admin/admin.service';
 
 @Component({
   selector: 'app-profile',

@@ -7,12 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { BrandService } from '../../../../services/brand/brand.service';
+import { BrandService } from '../../../../../services/brand/brand.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { ComponentManagerService } from '../../../../services/component-manager.service';
-import { UserServiceService } from '../../../../services/users/user-service.service';
+import { ComponentManagerService } from '../../../../../services/component-manager.service';
+import { UserServiceService } from '../../../../../services/users/user-service.service';
 
 @Component({
   selector: 'app-customer-edit',

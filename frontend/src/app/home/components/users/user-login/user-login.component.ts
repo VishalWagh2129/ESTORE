@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { User } from '../../types/user.type';
-import { UserServiceService } from '../../../services/users/user-service.service';
+import { UserServiceService } from '../../../../services/users/user-service.service';
 import { RouterModule } from '@angular/router';
 import { loginToken } from '../../types/user.type';
 import { Location } from '@angular/common';

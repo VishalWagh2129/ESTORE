@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { MatRadioModule } from '@angular/material/radio';
-import { ComponentManagerService } from '../../../../services/component-manager.service';
-import { AdminService } from '../../../../services/admin/admin.service';
+import { ComponentManagerService } from '../../../../../services/component-manager.service';
+import { AdminService } from '../../../../../services/admin/admin.service';
 
 @Component({
   selector: 'app-profile-edit',

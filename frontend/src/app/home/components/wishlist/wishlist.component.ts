@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { CartStoreItem } from '../../services/cart/cart.storeItem';
+import { CartStoreItem } from '../../../services/cart/cart.storeItem';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { CartItem } from '../types/cart.type';

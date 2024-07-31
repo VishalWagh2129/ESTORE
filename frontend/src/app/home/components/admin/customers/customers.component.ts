@@ -6,10 +6,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { BrandService } from '../../../services/brand/brand.service';
-import { ComponentManagerService } from '../../../services/component-manager.service';
+import { BrandService } from '../../../../services/brand/brand.service';
+import { ComponentManagerService } from '../../../../services/component-manager.service';
 import { CurrentUserModel } from '../../types/common.model';
-import { UserServiceService } from '../../../services/users/user-service.service';
+import { UserServiceService } from '../../../../services/users/user-service.service';
 
 @Component({
   selector: 'app-customers',

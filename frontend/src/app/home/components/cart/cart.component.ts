@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CartStoreItem } from '../../services/cart/cart.storeItem';
+import { CartStoreItem } from '../../../services/cart/cart.storeItem';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -7,14 +7,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartItem } from '../types/cart.type';
 import { RatingComponent } from '../../../shared/components/rating/rating.component';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserServiceService } from '../../services/users/user-service.service';
+import { UserServiceService } from '../../../services/users/user-service.service';
 import { loggedInUser } from '../types/user.type';
 import { Subscription } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { OrderService } from '../../services/order/order.service';
+import { OrderService } from '../../../services/order/order.service';
 import { DeliveryAddress } from '../types/cart.type';
-import { RazorpayService } from '../../services/razorpay/razorpay.service';
+import { RazorpayService } from '../../../services/razorpay/razorpay.service';
 
 declare var Razorpay: any;
 declare var RazorpayAffordabilitySuite: any;

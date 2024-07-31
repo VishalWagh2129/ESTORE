@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../../components/types/products.type';
+import { Product } from '../../home/components/types/products.type';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { loggedInUser, loginToken, User } from '../../components/types/user.type';
+import { loggedInUser, loginToken, User } from '../../home/components/types/user.type';
 
 @Injectable({
   providedIn: 'root'

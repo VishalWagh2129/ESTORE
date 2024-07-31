@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductsStoreItem } from '../../services/products/products.storeItems';
+import { ProductsStoreItem } from '../../../services/products/products.storeItems';
 import { ProductsComponent } from '../products/products.component';
 import { SidenavigationComponent } from '../sidenavigation/sidenavigation.component';
 

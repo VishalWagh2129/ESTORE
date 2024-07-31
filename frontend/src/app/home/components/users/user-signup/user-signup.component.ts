@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { matchPasswords } from './validators/match-passwords.validators';
 import { CommonModule } from '@angular/common';
 import { User } from '../../types/user.type';
-import { UserServiceService } from '../../../services/users/user-service.service';
+import { UserServiceService } from '../../../../services/users/user-service.service';
 
 @Component({
   selector: 'app-user-signup',

@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faSearch, faUserCircle, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { CategoriesStoreItem } from '../../services/category/categories.storeitem';
+import { CategoriesStoreItem } from '../../../services/category/categories.storeitem';
 import { CommonModule } from '@angular/common';
 import { SearchKeyword } from '../types/searchKeyword.type';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { CartStoreItem } from '../../services/cart/cart.storeItem';
+import { CartStoreItem } from '../../../services/cart/cart.storeItem';
 import { RouterModule } from '@angular/router';
-import { UserServiceService } from '../../services/users/user-service.service';
+import { UserServiceService } from '../../../services/users/user-service.service';
 import { Subscription } from 'rxjs';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';

@@ -3,8 +3,8 @@ import { Category } from '../types/categories.data';
 import { SubCategory } from '../types/subcategories.type';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { CategoriesStoreItem } from '../../services/category/categories.storeitem';
-import { SubCategoriesStoreItem } from '../../services/sub-category/subcategory.storeitem';
+import { CategoriesStoreItem } from '../../../services/category/categories.storeitem';
+import { SubCategoriesStoreItem } from '../../../services/sub-category/subcategory.storeitem';
 
 @Component({
   selector: 'app-sidenavigation',

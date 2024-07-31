@@ -1,6 +1,6 @@
-import { Product } from "../../components/types/products.type";
+import { Product } from "../../home/components/types/products.type";
 import { ProductsService } from "./products.service";
-import { StoreItem } from "../../../shared/storeitems";
+import { StoreItem } from "../../shared/storeitems";
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 

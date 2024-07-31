@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PastOrder,PastOrderProduct } from '../types/order.type';
 import { CommonModule } from '@angular/common';
-import { OrderService } from '../../services/order/order.service';
-import { UserServiceService } from '../../services/users/user-service.service';
+import { OrderService } from '../../../services/order/order.service';
+import { UserServiceService } from '../../../services/users/user-service.service';
 import { Subscription } from 'rxjs';
 
 @Component({

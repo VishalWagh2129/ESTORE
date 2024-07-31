@@ -7,12 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { CategoryService } from '../../../../services/category/category.service';
-import { SubcategoryService } from '../../../../services/sub-category/subcategory.service';
+import { CategoryService } from '../../../../../services/category/category.service';
+import { SubcategoryService } from '../../../../../services/sub-category/subcategory.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
-import { ComponentManagerService } from '../../../../services/component-manager.service';
+import { ComponentManagerService } from '../../../../../services/component-manager.service';
 
 @Component({
   selector: 'app-subcategory-edit',

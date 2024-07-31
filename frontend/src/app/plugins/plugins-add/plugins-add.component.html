@@ -1,0 +1,68 @@
+<div class="card">
+    <h4 [routerLink]="['/admin/plugins']" class="back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9.57 5.92993L3.5 11.9999L9.57 18.0699" stroke="#3764EB" stroke-width="1.5" stroke-miterlimit="10"
+                stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M20.4999 12H3.66992" stroke="#3764EB" stroke-width="1.5" stroke-miterlimit="10"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>Back
+    </h4>
+    <div class="container custom">
+        <form [formGroup]="pluginForm">
+            <div class="row">
+                <div class="col-md-12 col-12 mb-2">
+                    <mat-form-field class="full-width">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Enter Name" formControlName="name" class="mt-2">
+                        <div *ngIf="submitted && pluginForm.get('name').hasError('required')" class="text-danger mt-2">
+                            Name is required
+                        </div>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-12 col-12 mb-2">
+                    <mat-form-field class="full-width">
+                        <mat-label>Status</mat-label>
+                        <mat-select formControlName="status" class="mt-2">
+                            <mat-option *ngFor="let status of ['ACTIVE', 'INACTIVE']" [value]="status">
+                                {{ status }}
+                            </mat-option>
+                        </mat-select>
+                        <div *ngIf="submitted && pluginForm.get('status').hasError('required')" class="text-danger mt-2">
+                            Status is required
+                        </div>
+                    </mat-form-field>
+                </div>
+
+                <!-- <div class="col-md-12 col-12 mb-2">
+                    <mat-form-field class="full-width">
+                        <mat-label>Id</mat-label>
+                        <input matInput placeholder="Enter Id" formControlName="id" class="mt-2" type="number">
+                        <div *ngIf="submitted && pluginForm.get('id').hasError('required')" class="text-danger mt-2">
+                            Price is required
+                        </div>
+                    </mat-form-field>
+                </div> -->
+
+                <div class="col-md-12 col-12 mb-2">
+                    <mat-form-field class="full-width">
+                        <mat-label>Secret key</mat-label>
+                        <input matInput placeholder="Enter Secret key" formControlName="key" class="mt-2">
+                        <div *ngIf="submitted && pluginForm.get('key').hasError('required')" class="text-danger mt-2">
+                            Key is required
+                        </div>
+                    </mat-form-field>
+                </div>
+
+                <div class="col-md-12 col-12 mb-2">
+                    <button *ngIf="mode!=='edit'" mat-raised-button color="primary" type="submit"
+                        (click)='onSubmit()'>Submit</button>
+                    <button *ngIf="mode==='edit'" mat-raised-button color="primary" type="submit"
+                        (click)='onUpdate()'>Update</button>
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+</div>

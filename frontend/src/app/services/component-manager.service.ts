@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CurrentUserModel } from '../components/types/common.model';
+import { CurrentUserModel } from '../home/components/types/common.model';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({

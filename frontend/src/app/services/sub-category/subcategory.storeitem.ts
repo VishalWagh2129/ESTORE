@@ -1,5 +1,5 @@
-import { StoreItem } from '../../../shared/storeitems';
-import { Category } from '../../components/types/categories.data';
+import { StoreItem } from '../../shared/storeitems';
+import { Category } from '../../home/components/types/categories.data';
 import { SubcategoryService } from './subcategory.service';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
