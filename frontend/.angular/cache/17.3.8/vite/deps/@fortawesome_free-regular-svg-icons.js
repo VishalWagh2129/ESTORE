@@ -1,4 +1,4 @@
-import "./chunk-J4B6MK7R.js";
+import "./chunk-BYTETG5J.js";
 
 // node_modules/@fortawesome/free-regular-svg-icons/index.mjs
 var prefix = "far";

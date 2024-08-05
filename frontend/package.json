@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ionic:serve": "ng.cmd run frontend:serve --host=localhost --port=8100"
   },
   "private": true,
   "dependencies": {
@@ -23,7 +24,10 @@
     "@fortawesome/angular-fontawesome": "^0.14.0",
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@ionic/angular": "latest",
+    "@ionic/cordova-builders": "^11.0.0",
     "bootstrap": "^5.3.3",
+    "cordova-android": "13.0.0",
     "jquery": "^3.7.1",
     "jwt-decode": "^4.0.0",
     "ngx-cookie-service": "^17.0.0",
@@ -37,8 +41,14 @@
     "@angular-devkit/build-angular": "^17.3.6",
     "@angular/cli": "^17.3.6",
     "@angular/compiler-cli": "^17.3.0",
+    "@ionic/angular-toolkit": "latest",
     "@types/jasmine": "~5.1.0",
     "angular-cli-ghpages": "^2.0.1",
+    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^5.0.0",
+    "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -46,5 +56,17 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "typescript": "~5.4.2"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {}
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }
